@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --softRed: hsl(345, 95%, 68%);
+  --GrayishBlue: hsl(237, 18%, 59%);
+  --whiteColor: #FFF;
+  --desaturatedBlue: hsl(236, 21%, 26%);
+  --darkBlue: hsl(235, 16%, 14%);
+  --mostlyBlack: hsl(234, 17%, 12%);
+  --bgColorOne: #2b2c45;
+  --bgColorTwo: #33364e;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  min-height: 100vh;
+  background-color: var(--mostlyBlack);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/bg-stars.svg");
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 600px;
+  user-select: none;
+}
+
+
+.container>h2 {
+  font-weight: bold;
+  color: var(--whiteColor);
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+.timer .theTime {
+  flex-basis: 17%;
+  text-align: center;
+}
+
+.timer .theTime h2 {
+  color: var(--GrayishBlue);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top: 15px;
+}
+
+.timeDay {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  position: relative;
+}
+
+.timeDay::before {
+  content: "";
+  background-color: var(--bgColorOne);
+  position: absolute;
+  width: 100%;
+  height: 49%;
+  z-index: -1;
+  border-radius: 6px;
+  top: 0;
+}
+
+.timeDay::after {
+  content: "";
+  background-color: var(--bgColorTwo);
+  ;
+  position: absolute;
+  border-radius: 6px;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  z-index: -1;
+}
+
+.timeDay span {
+  font-weight: bold;
+  color: var(--softRed);
+  font-size: 56px;
+}
+
+.container .hill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.icons {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.icons i {
+  transition: 0.5s ease;
+  color: var(--GrayishBlue);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icons i:hover {
+  transform: translateY(5px);
+  color: var(--softRed);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--whiteColor);
+}
+
+.attribution a {
+  color: var(--softRed);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media(max-width:767px) {
+  .container {
+    width: 350px;
+  }
+
+  .timer .theTime{
+    flex-basis: 24%;
+  }
+
+  .timeDay span {
+    font-size: 35px;
+  }
+
+  .timer .theTime h2{
+    font-size: 10px;
+  }
+}
